@@ -18,6 +18,7 @@ object ApplicationBuild extends Build {
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
+    scalacOptions ++= Seq("-feature", "-deprecation", "-unchecked"),
     resolvers ++= Seq(
       "Local Maven Repository" at Path.userHome.asFile.toURI.toURL+"/.m2/repository"
     )
