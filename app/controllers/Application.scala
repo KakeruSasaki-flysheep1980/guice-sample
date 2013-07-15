@@ -9,7 +9,7 @@ import services.HogeService
 @Singleton  // これが無いとControllerのインスタンスが1つではなくなる
 class Application @Inject()(hogeService: HogeService) extends Controller {
 
-  def index = Action {
+  def index = Action { request =>
     hogeService.hoge(2)
     Ok(views.html.index(hogeService.hoge(1)))
   }

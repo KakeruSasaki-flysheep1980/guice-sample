@@ -9,16 +9,8 @@ import services.HogeService
 object Global extends GlobalSettings {
 
   class MyModule extends AbstractModule with ScalaModule {
-    def configure {
+    def configure() {
       bind[HogeService].in[Singleton]
-//      bindInterceptor(Matchers.inSubpackage("services"), Matchers.any(), new MethodInterceptor {
-//        def invoke(invocation: MethodInvocation): AnyRef = {
-//          println("aaaaaaaa")
-//          invocation.proceed()
-//        }
-//      })
-
-
     }
   }
 
